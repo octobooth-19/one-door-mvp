@@ -1,0 +1,27 @@
+{
+  "asOf": "2026-11-18T12:00:00.000Z",
+  "accounts": {
+    "acme": {
+      "name": "Acme Industrial",
+      "terms": "Net 30",
+      "methods": "Bank transfer or the customer billing portal",
+      "reference": "Include the invoice number with your payment.",
+      "invoices": [
+        { "id": "INV-1042", "issued": "2026-11-01", "due": "2026-12-01", "status": "Open", "total": 12480, "balance": 12480, "description": "November equipment supply" },
+        { "id": "INV-1038", "issued": "2026-10-11", "due": "2026-11-10", "status": "Overdue", "total": 6400, "balance": 6400, "description": "October maintenance services" },
+        { "id": "INV-1031", "issued": "2026-10-01", "due": "2026-10-31", "status": "Paid", "total": 8750, "balance": 0, "description": "October equipment supply" },
+        { "id": "INV-1027", "issued": "2026-09-15", "due": "2026-10-15", "status": "Paid", "total": 4200, "balance": 0, "description": "September service agreement" }
+      ]
+    },
+    "northstar": {
+      "name": "Northstar Studio",
+      "terms": "Net 15",
+      "methods": "Bank transfer or the customer billing portal",
+      "reference": "Include the invoice number with your payment.",
+      "invoices": [
+        { "id": "INV-2088", "issued": "2026-11-12", "due": "2026-11-27", "status": "Open", "total": 2800, "balance": 2800, "description": "November production services" },
+        { "id": "INV-2081", "issued": "2026-10-20", "due": "2026-11-04", "status": "Paid", "total": 7350, "balance": 0, "description": "October production services" }
+      ]
+    }
+  }
+}

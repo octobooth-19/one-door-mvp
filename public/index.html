@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172d29">
+  <title>OneDoor | Your business, in one conversation</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-door" viewBox="0 0 24 24"><path d="M5 21V3h14v18M9 21V7h6v14M3 21h18"/><path d="M12 13h.01"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 2V11.5A8.5 8.5 0 0 1 9.5 3h3a8.5 8.5 0 0 1 8.5 8.5Z"/><path d="M7 10h8M7 14h5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8l10-5ZM2 12l10 5 10-5M2 16l10 5 10-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-balance" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="15" rx="3"/><path d="M3 10V6a3 3 0 0 1 3-3h12M16 12h5v5h-5a2.5 2.5 0 0 1 0-5Z"/></symbol>
+    <symbol id="i-invoice" viewBox="0 0 24 24"><path d="m6 3 2 1 2-1 2 1 2-1 2 1 2-1v18l-2-1-2 1-2-1-2 1-2-1-2 1V3Z"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+    <symbol id="i-terms" viewBox="0 0 24 24"><path d="M12 5c-3-3-7-2-10-1v15c3-1 7-2 10 1 3-3 7-2 10-1V4c-3-1-7-2-10 1Zm0 0v15"/><path d="M5 8h3M16 8h3M5 12h3M16 12h3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 4H4v16h5M9 12h12m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M2 12h5l3-8 4 16 3-8h5"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H4v13h4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+  </svg>
+  <a class="skip-link" href="#question">Skip to message</a>
+  <div id="nav-overlay" class="nav-overlay" hidden></div>
+  <div class="app-shell">
+    <aside id="sidebar" class="sidebar" aria-label="Workspace navigation">
+      <a class="brand" href="/" aria-label="OneDoor home">
+        <span class="brand-mark"><svg class="icon"><use href="#i-door"/></svg></span>
+        <span>one<span class="brand-light">door</span><span class="brand-period">.</span></span>
+      </a>
+      <div class="workspace-tag"><span class="tiny-dot"></span> CUSTOMER WORKSPACE</div>
+      <button id="new-chat" class="new-chat" type="button">
+        <svg class="icon"><use href="#i-plus"/></svg> New conversation <span class="key-hint">N</span>
+      </button>
+      <nav class="navigation" aria-label="Main">
+        <button id="chat-nav" class="nav-item active" type="button" aria-current="page">
+          <svg class="icon"><use href="#i-chat"/></svg> Ask OneDoor <span class="nav-dot"></span>
+        </button>
+        <button id="connectors-nav" class="nav-item" type="button">
+          <svg class="icon"><use href="#i-layers"/></svg> Connected services <span id="nav-count" class="nav-count">0</span>
+        </button>
+      </nav>
+      <div class="history-heading">RECENT CONVERSATIONS</div>
+      <div id="history" class="history"><p class="history-empty">A fresh start. Your conversations will appear here.</p></div>
+      <div class="sidebar-bottom">
+        <div class="preview-note"><span class="tiny-dot"></span> A preview of what's possible<span>Sample data. Real boundaries.</span></div>
+        <button id="account-button" class="account-button" type="button" aria-label="Choose demo account">
+          <span id="avatar" class="avatar">OD</span>
+          <span class="account-copy"><strong id="account-name">Explore the workspace</strong><span id="account-organization">Choose a demo account</span></span>
+          <svg class="icon"><use href="#i-down"/></svg>
+        </button>
+      </div>
+    </aside>
+    <main id="workspace" class="workspace">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="menu-button" class="icon-button mobile-only" aria-label="Open navigation" aria-expanded="false" type="button"><svg class="icon"><use href="#i-menu"/></svg></button>
+          <div class="breadcrumb"><span>Workspace</span><svg class="icon"><use href="#i-chevron"/></svg><strong>Ask OneDoor</strong></div>
+        </div>
+        <div class="topbar-actions">
+          <span class="environment-badge"><span></span> LOCAL MVP</span>
+          <button id="about-button" class="icon-button" type="button" aria-label="About this MVP"><svg class="icon"><use href="#i-info"/></svg></button>
+          <button id="activity-button" class="icon-button compact-only" type="button" aria-label="View answer activity"><svg class="icon"><use href="#i-activity"/></svg></button>
+        </div>
+      </header>
+      <div class="workbench">
+        <section class="conversation" aria-label="Chat with OneDoor">
+          <div id="scroll-area" class="scroll-area">
+            <section id="welcome" class="welcome">
+              <div class="welcome-eyebrow"><span class="spark-mark">+</span> LESS SEARCHING. MORE CLARITY.</div>
+              <h1>Your business.<br><span>One conversation.</span></h1>
+              <p id="welcome-description" class="welcome-description">The answers you need, from the teams you trust.<br>Start with a demo account to see it in action.</p>
+              <div id="welcome-service" class="welcome-service"><svg class="icon"><use href="#i-shield"/></svg><span>A read-only space to explore</span></div>
+              <div id="prompt-grid" class="prompt-grid"></div>
+              <button id="start-demo" class="primary-button" type="button">Explore a demo workspace <svg class="icon"><use href="#i-arrow"/></svg></button>
+              <div class="welcome-bottom"><span class="hairline"></span><span>ONE FRONT DOOR. ONLY YOUR ACCOUNT.</span><span class="hairline"></span></div>
+              <div class="welcome-principles">
+                <span><svg class="icon"><use href="#i-layers"/></svg> Connected to your services</span>
+                <span><svg class="icon"><use href="#i-shield"/></svg> Access checked on every lookup</span>
+              </div>
+            </section>
+            <div id="messages" class="messages" role="log" aria-label="Conversation" aria-live="polite" aria-relevant="additions"></div>
+          </div>
+          <div class="composer-wrap">
+            <div id="composer-context" class="composer-context"><span class="tiny-dot"></span><span id="composer-service">Choose a demo account to begin</span></div>
+            <form id="composer" class="composer">
+              <label class="sr-only" for="question">Your message to OneDoor</label>
+              <textarea id="question" placeholder="Ask about invoices, balances, or payment terms..." maxlength="2000" rows="2" aria-describedby="composer-help" disabled></textarea>
+              <div class="composer-controls">
+                <span class="composer-model"><svg class="icon"><use href="#i-door"/></svg><span id="provider-label">Rules-based preview</span><span class="model-divider"></span><span id="character-count">0 / 2000</span></span>
+                <button id="send-button" class="send-button" type="submit" aria-label="Send message" disabled><svg class="icon"><use href="#i-up"/></svg></button>
+                <button id="stop-button" class="send-button stop-button" type="button" aria-label="Stop response" hidden><svg class="icon"><use href="#i-stop"/></svg></button>
+              </div>
+            </form>
+            <p id="composer-help" class="composer-help"><span>Synthetic data &amp; demo identity. Not connected to Entra.</span><span class="keyboard-help"><kbd>Enter</kbd> to send</span></p>
+          </div>
+        </section>
+        <aside class="context-panel" aria-label="Workspace context and answer activity">
+          <div class="context-section">
+            <div class="section-eyebrow">YOUR WORKSPACE</div>
+            <div class="organization-card">
+              <span class="organization-icon"><svg class="icon"><use href="#i-layers"/></svg></span>
+              <div><strong id="workspace-organization">Your demo workspace</strong><span>Customer account</span></div>
+            </div>
+          </div>
+          <div class="context-section">
+            <div class="section-title"><h2>Connected services</h2><span id="service-count">0</span></div>
+            <div id="connector-list" class="connector-list"><p class="subtle">Choose an account to see its services.</p></div>
+            <p class="panel-footnote">Capabilities come from the connector registry, not a hardcoded menu.</p>
+          </div>
+          <div class="context-section activity-section">
+            <div class="section-title"><h2>Behind the answer</h2><span id="activity-state" class="activity-state">Ready</span></div>
+            <p class="activity-description">A clear path from your question to the source.</p>
+            <ol id="trace-steps" class="trace-steps"></ol>
+            <div id="trace-reference" class="trace-reference" hidden></div>
+          </div>
+          <div class="trust-note">
+            <span class="trust-icon"><svg class="icon"><use href="#i-lock"/></svg></span>
+            <h3>Lookups. Not actions.</h3>
+            <p>Every connected tool is read-only. Payments, refunds, and record changes stay out of this MVP.</p>
+            <button id="boundaries-button" class="text-button" type="button">Understand the boundaries <svg class="icon"><use href="#i-arrow"/></svg></button>
+          </div>
+          <div class="context-footer"><span class="tiny-dot"></span> BUILT TO CONNECT, NOT COMPLICATE.</div>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header"><div><div class="section-eyebrow">ONEDOOR / WORKSPACE</div><h2 id="dialog-title">Details</h2></div><button id="close-dialog" class="icon-button" type="button" aria-label="Close details"><svg class="icon"><use href="#i-close"/></svg></button></div>
+    <div id="dialog-body" class="dialog-body"></div>
+  </dialog>
+  <div id="notices" class="notices" aria-live="assertive"></div>
+</body>
+</html>

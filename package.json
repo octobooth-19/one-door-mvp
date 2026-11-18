@@ -1,0 +1,13 @@
+{
+  "name": "one-door-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Dependency-free, read-only reference slice of the OneDoor connector platform.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test",
+    "check:registry": "node scripts/pin-registry.mjs"
+  }
+}

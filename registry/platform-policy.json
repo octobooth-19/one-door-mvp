@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "connectors": {
+    "finance": {
+      "audience": "urn:one-door:connector:finance",
+      "tools": {
+        "finance_account_summary": { "scope": "finance:read", "risk": "read" },
+        "finance_invoice_search": { "scope": "finance:read", "risk": "read" },
+        "finance_payment_terms": { "scope": "finance:read", "risk": "read" }
+      }
+    }
+  }
+}

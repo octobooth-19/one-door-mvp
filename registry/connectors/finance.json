@@ -1,0 +1,91 @@
+{
+  "id": "finance",
+  "version": "0.1.0",
+  "lifecycle": "active",
+  "display": {
+    "name": "Finance",
+    "description": "A clear view of your invoices, account balance, and payment terms.",
+    "capabilities": [
+      "Invoice status and history",
+      "Outstanding account balance",
+      "Payment terms and methods"
+    ],
+    "prompts": [
+      {
+        "title": "What's outstanding?",
+        "description": "See your balance at a glance",
+        "message": "What is my outstanding balance?",
+        "icon": "balance"
+      },
+      {
+        "title": "Any overdue invoices?",
+        "description": "Find what needs your attention",
+        "message": "Show my overdue invoices",
+        "icon": "invoice"
+      },
+      {
+        "title": "How do payments work?",
+        "description": "Understand your payment terms",
+        "message": "What are our payment terms?",
+        "icon": "terms"
+      }
+    ]
+  },
+  "routing": {
+    "keywords": [
+      "invoice",
+      "invoices",
+      "inv-",
+      "balance",
+      "outstanding",
+      "owe",
+      "overdue",
+      "unpaid",
+      "paid",
+      "payment",
+      "payments",
+      "terms",
+      "billing",
+      "account",
+      "due",
+      "statement",
+      "pay"
+    ],
+    "excludeKeywords": [
+      "shipment",
+      "shipping",
+      "delivery",
+      "inventory",
+      "payroll",
+      "weather"
+    ]
+  },
+  "endpoint": {
+    "kind": "mcp",
+    "binding": "finance",
+    "protocolVersion": "2026-07-28"
+  },
+  "auth": {
+    "audience": "urn:one-door:connector:finance"
+  },
+  "tools": [
+    {
+      "name": "finance_account_summary",
+      "scope": "finance:read",
+      "risk": "read",
+      "pin": "sha256:eb4328a92b304411e31c5b0c8172dc6636a5422770cafd5a13773e6ebe4bded7"
+    },
+    {
+      "name": "finance_invoice_search",
+      "scope": "finance:read",
+      "risk": "read",
+      "pin": "sha256:60a48d5366050010e4e08671eaa766bd624d95ac3a20fb412423ca91a46640b4"
+    },
+    {
+      "name": "finance_payment_terms",
+      "scope": "finance:read",
+      "risk": "read",
+      "pin": "sha256:f287ecfa987035c39ee952f8cef2b2a4f3ad24a9d31d33fb0612a2291234c983"
+    }
+  ]
+}
